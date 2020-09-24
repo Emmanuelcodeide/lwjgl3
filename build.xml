@@ -1347,6 +1347,7 @@
                 public="true"
                 maxmemory="1G"
                 failonerror="true"
+                verbose="true"
                 unless:set="javadoc.skip"
             >
                 <doctitle><![CDATA[<h1>LWJGL - @{title}</h1>]]></doctitle>
@@ -1480,8 +1481,6 @@
             <jvmarg value="-Dmodule.name.list=${module.list}"/>
             <jvmarg value="-Dmodule.version=${module.version}"/>
         </java>
-
-        <parallel threadcount="4" failonany="true">
 
         <!-- CORE -->
         <sequential>
@@ -1826,7 +1825,5 @@
 
         <!-- zstd -->
         <release-module name="zstd" native-library="lwjgl_zstd" title="zstd" if:true="${binding.zstd}"/>
-
-        </parallel>
     </target>
 </project>
